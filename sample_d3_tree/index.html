@@ -47,7 +47,7 @@ var sankey = d3.sankey()
     .size([width, height]);
 
 // load the data
-d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_sankey.json", function(error, graph) {
+d3.json("https://raw.githubusercontent.com/thinh-tran/medication-tree/master/sample_d3_tree/data_sankey.json", function(error, graph) {
 
   // Constructs a new Sankey generator with the default settings.
   sankey
@@ -87,7 +87,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/d
       .style("stroke", function(d) { return d3.rgb(d.color).darker(2); })
     // Add hover text
     .append("title")
-      .text(function(d) { return d.name + "\n" + "There is " + d.value + " stuff in this node"; });
+      .text(function(d) { return d.name + "\n" + d.value + " patients in this node"; });
 
   // add in the title for the nodes
     node
